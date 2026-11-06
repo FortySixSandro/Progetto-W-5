@@ -30,3 +30,33 @@ a {
     --verde: hsl(150, 60%, 30%);
     --bordo: #eee;
 }
+
+/* :root.dark{} */
+
+
+
+/* NAVBAR */
+nav {
+    border: 1px solid red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    color: hsl(150, 60%, 30%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 5px;
+}
+
+nav li{
+    display: inline-block;
+    padding: 10px;
+    margin-right: 6px;
+}
