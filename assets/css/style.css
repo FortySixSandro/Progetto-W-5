@@ -290,50 +290,86 @@ header.scrolled .buttonTheme {
     transform: translate(-50%, -50%);
     background-color: var(--card);
     color: var(--testo);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
+    padding: 32px 28px;
+    border-radius: 16px;
+    max-width: 480px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
 }
 
-#closeModal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 14px 24px;
+.modal h2 {
+    margin: 0 0 4px;
+    color: var(--titoli);
 }
 
-form label {
-    color: var(--titoli);
+.modalSub {
+    margin: 0 0 24px;
+    opacity: 0.7;
+}
+
+#closeModal {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    padding: 4px 8px;
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.formGroup {
+    margin-bottom: 18px;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
-input,
-textarea,
-select {
-    background-color: var(--input-bg);
-    color: var(--testo);
-    border: 1px solid var(--bordo);
-}
-
-input,
-textarea {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
+.modal input,
+.modal select,
+.modal textarea {
     width: 100%;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--testo);
+    background-color: var(--card);
+    border: 1px solid var(--bordo-btn);
+    border-radius: 8px;
     caret-color: var(--verde);
 }
 
-input[type="checkbox"] {
-    accent-color: var(--verde);
-    width: auto;
+.modal textarea {
+    resize: vertical;
 }
 
-input:focus,
-textarea:focus {
-    outline: 2px solid var(--verde);
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px var(--verde-trasp);
+}
+
+.submitBtn {
+    padding: 12px 28px;
+    font: inherit;
+    font-weight: bold;
+    color: var(--bianco);
+    background-color: var(--verde);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: opacity 150ms;
+}
+
+.submitBtn:hover {
+    opacity: 0.9;
 }
 
 /* CAROUSEL */
@@ -409,6 +445,7 @@ footer {
 
 /* EFFETTI HOVER */
 @media (hover: hover) {
+
     .serviceCard:hover,
     .teamCard:hover,
     .card:hover {
@@ -533,6 +570,7 @@ footer {
 }
 
 @media (min-width: 992px) {
+
     .cards,
     .serviceCards,
     .teamCards {

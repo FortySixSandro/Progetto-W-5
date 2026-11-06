@@ -179,62 +179,43 @@
             <a href="#"><i class="fa-solid fa-arrow-up-long"></i></a>
         </div>
 
-        <div id="overlay" class="overlay">
-            <div class="modal">
-                <button id="closeModal" type="button">X</button>
-                <form action="grazie.html">
-                    <label for="nome">Nome</label>
-                    <br>
-                    <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+<div id="overlay" class="overlay">
+    <div class="modal">
+        <button id="closeModal" type="button" aria-label="Chiudi">&times;</button>
 
-                    <br>
-                    <br>
+        <h2>Richiedi un preventivo</h2>
+        <p class="modalSub">Raccontaci il tuo progetto: ti risponderemo entro 48 ore.</p>
 
-                    <label for="email">Email</label>
-                    <br>
-                    <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
-
-                    <br>
-                    <br>
-
-                    <label for="motivoDelContatto">Motivo del contatto</label>
-                    <br>
-
-                    <select required name="motivoDelContatto" id="motivoDelContatto">
-                        <option value=""></option>
-                        <option value="lavoro">Proposta di lavoro</option>
-                        <option value="pre">Preventivo</option>
-                        <option value="info">Informazioni</option>
-                    </select>
-
-                    <br>
-                    <br>
-
-                    <label for="dataRisposta">Data preferita per la risposta</label>
-                    <br>
-                    <input type="date" id="dataRisposta" name="dataRisposta">
-
-                    <br>
-                    <br>
-
-                    <label for="messaggio">Messaggio</label>
-                    <br>
-                    <textarea placeholder="Scrivi qui il tuo messaggio..." name="messaggio" id="messaggio"
-                        rows="5"></textarea>
-
-                    <br>
-                    <br>
-
-                    <input required type="checkbox" name="termini"><span class="titoloBlu bold">Accetto di essere
-                        ricontattato all'indirizzo indicato</span>
-                    <br>
-                    <br>
-
-                    <button type="submit">Invia</button>
-
-                </form>
+        <form action="grazie.html">
+            <div class="formGroup">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome">
             </div>
-        </div>
+
+            <div class="formGroup">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="formGroup">
+                <label for="servizio">Servizio</label>
+                <select id="servizio" name="servizio" required>
+                    <option value="" disabled selected>Scegli un servizio</option>
+                    <option value="identita">Identità visiva</option>
+                    <option value="web">Web design</option>
+                    <option value="motion">Motion graphic</option>
+                </select>
+            </div>
+
+            <div class="formGroup">
+                <label for="messaggio">Messaggio</label>
+                <textarea id="messaggio" name="messaggio" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="submitBtn">Invia richiesta</button>
+        </form>
+    </div>
+</div>
     </div>
 
     <footer id="footer">
