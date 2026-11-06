@@ -137,6 +137,7 @@ nav li {
 header.scrolled {
     background: var(--verde);
     color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 header.scrolled .logo,
@@ -367,6 +368,7 @@ footer {
 
 .iconsFt i:hover {
     background-color: var(--verde);
+    color: var(--footer-bg);
     transform: translateY(-2px);
 }
 
