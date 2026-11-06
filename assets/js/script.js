@@ -48,3 +48,9 @@ buttonTheme.addEventListener('click', () => {
 });
 
 applyTheme(localStorage.getItem('theme') === 'dark');
+
+const scrollGreen = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    scrollGreen.classList.toggle('scrolled', window.scrollY > 50);
+});

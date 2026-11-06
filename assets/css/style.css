@@ -74,6 +74,7 @@ header {
     top: 0;
     z-index: 999;
     background: var(--sfondo);
+    transition: background-color 0.3s;
 }
 
 nav {
@@ -128,9 +129,23 @@ nav li {
 .buttonTheme {
     padding: 4px 10px;
     color: var(--testo);
-    border: 1px solid grey;
+    border: 1px solid rgb(201, 201, 201);
     border-radius: 20px;
     cursor: pointer;
+}
+
+header.scrolled {
+    background: var(--verde);
+    color: white;
+}
+
+header.scrolled .logo,
+header.scrolled .buttonTheme {
+    color: white;
+}
+
+header.scrolled .buttonTheme {
+    border-color: white;
 }
 
 /* HERO SECTION */
@@ -362,9 +377,8 @@ nav li:hover {
 }
 
 .buttonTheme:hover {
-    border: none;
-    color: var(--hero-btn-bg);
-    background-color: var(--verde);
+    color: var(--verde);
+    background-color: var(--bg-li);
 
 }
 
