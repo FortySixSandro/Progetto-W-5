@@ -340,20 +340,32 @@ footer {
     transition: all 150ms cubic-bezier(.215, .61, .355, 1);
 }
 
+
+
+/* EFFETTI HOVER */
+.serviceCard:hover,
+.teamCard:hover,
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 10px 4px 25px gray;
+}
+
 .iconsFt i:hover {
     background-color: var(--verde);
     transform: translateY(-2px);
 }
 
-/* EFFETTI HOVER */
-.serviceCard:hover,
-.teamCard:hover, .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 10px 4px 25px gray;
+nav li:hover {
+    color: var(--verde);
+    background-color: var(--bg-li);
+    border-radius: 8px;
 }
 
-nav li:hover{
-    background-color: var(--bg-li);
+.buttonTheme:hover {
+    border: none;
+    color: var(--hero-btn-bg);
+    background-color: var(--verde);
+
 }
 
 /* MEDIA QUERY */
