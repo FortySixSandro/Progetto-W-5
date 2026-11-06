@@ -477,3 +477,19 @@ nav li:hover {
         text-align: center;
     }
 }
+
+@media (min-width: 992px) {
+    .cards,
+    .serviceCards,
+    .teamCards {
+        padding: 0 40px;
+    }
+
+    .card,
+    .serviceCard,
+    .teamCard,
+    .serviceCard:nth-child(3),
+    .teamCard:nth-child(3) {
+        width: calc((100% - 50px) / 3);
+    }
+}
