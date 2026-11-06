@@ -22,6 +22,7 @@
     --footer-icona: white;
     --footer-icona-bg: rgb(48, 48, 48);
     --logo-ft: hsl(150, 66%, 58%);
+    --bg-li: hsl(150, 60%, 95%);
 }
 
 :root.dark {
@@ -186,6 +187,7 @@ nav li {
     width: 90%;
     padding: 10px;
     margin-bottom: 25px;
+    transition: all 250ms cubic-bezier(.215, .61, .355, 1);
 }
 
 .serviceCard i {
@@ -225,15 +227,12 @@ nav li {
 }
 
 .buttonUp {
-    position: sticky;
-    padding: 30px;
-    bottom: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    margin-left: auto;
-    margin-right: 50px;
-    margin-bottom: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 900;
+    width: 50px;
+    height: 50px;
     border-radius: 20%;
     background-color: var(--verde);
 }
@@ -338,6 +337,23 @@ footer {
     border-radius: 50%;
     color: var(--footer-icona);
     background-color: var(--footer-icona-bg);
+    transition: all 150ms cubic-bezier(.215, .61, .355, 1);
+}
+
+.iconsFt i:hover {
+    background-color: var(--verde);
+    transform: translateY(-2px);
+}
+
+/* EFFETTI HOVER */
+.serviceCard:hover,
+.teamCard:hover, .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 10px 4px 25px gray;
+}
+
+nav li:hover{
+    background-color: var(--bg-li);
 }
 
 /* MEDIA QUERY */
