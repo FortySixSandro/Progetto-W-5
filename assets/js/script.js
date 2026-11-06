@@ -71,3 +71,37 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach((card) => revealObserver.observe(card));
+
+const carousel = document.querySelector('.carousel');
+const track = document.querySelector('.carouselTrack');
+const originals = [...track.children];
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function buildCarousel() {
+    track.querySelectorAll('.clone').forEach((clone) => clone.remove());
+
+    if (reducedMotion) return;
+
+    const setWidth = track.offsetWidth;
+    const copies = Math.ceil(carousel.offsetWidth / setWidth) + 1;
+
+    for (let i = 0; i < copies; i++) {
+        originals.forEach((card) => {
+            const clone = card.cloneNode(true);
+            clone.classList.add('clone');
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+        });
+    }
+
+    track.style.setProperty('--shift', `-${setWidth}px`);
+    track.style.setProperty('--duration', `${setWidth / 40}s`);
+}
+
+buildCarousel();
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildCarousel, 200);
+});

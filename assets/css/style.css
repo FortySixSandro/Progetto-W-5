@@ -178,7 +178,8 @@ header.scrolled .buttonTheme {
 /* SECTION GENERALI & BOTTONE TORNA SU */
 .sectionLavori h2,
 .sectionServizi h2,
-.sectionTeam h2 {
+.sectionTeam h2,
+.sectionTestimonianze h2 {
     text-align: center;
     color: var(--titoli);
     padding: 10px;
@@ -327,6 +328,68 @@ textarea:focus {
     outline: 2px solid var(--verde);
 }
 
+/* CAROUSEL */
+.sectionTestimonianze {
+    padding-bottom: 45px;
+}
+
+.carousel {
+    overflow: hidden;
+    padding: 20px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.carouselTrack {
+    display: flex;
+    width: max-content;
+    animation: slide var(--duration, 30s) linear infinite;
+}
+
+.carousel:hover .carouselTrack {
+    animation-play-state: paused;
+}
+
+.reviewCard {
+    flex: 0 0 260px;
+    margin-right: 25px;
+    background: var(--card);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+}
+
+.reviewText {
+    font-style: italic;
+}
+
+.reviewAuthor {
+    margin-bottom: 0;
+}
+
+.reviewAuthor strong {
+    color: var(--testo);
+}
+
+@keyframes slide {
+    to {
+        transform: translateX(var(--shift, -50%));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .carouselTrack {
+        animation: none;
+    }
+}
+
 /* FOOTER */
 footer {
     color: var(--footer-testo);
@@ -355,8 +418,6 @@ footer {
     background-color: var(--footer-icona-bg);
     transition: all 150ms cubic-bezier(.215, .61, .355, 1);
 }
-
-
 
 /* EFFETTI HOVER */
 .serviceCard:hover,
@@ -464,6 +525,10 @@ nav li:hover {
         justify-content: start;
     }
 
+    .reviewCard {
+        flex-basis: 300px;
+    }
+
     .logoFt,
     .copyFt {
         flex: 1;
@@ -479,6 +544,7 @@ nav li:hover {
 }
 
 @media (min-width: 992px) {
+
     .cards,
     .serviceCards,
     .teamCards {
