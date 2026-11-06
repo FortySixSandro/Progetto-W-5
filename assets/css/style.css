@@ -24,6 +24,16 @@ a {
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--sfondo);
+}
 /* PALETTE COLORI */
 :root {
     --testo: #1a1a1a;
@@ -41,7 +51,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px;
+    padding: 8px;
+    margin-right: 6px;
 }
 
 .logo {
@@ -57,11 +68,11 @@ nav {
 .logo2 {
     color: hsl(150, 66%, 58%);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-size: 18px;
-    padding: 6px;
+    margin-bottom: 4px;
 }
 
 .logo p {
@@ -70,6 +81,10 @@ nav {
 }
 
 .logo i {
+    margin-right: 5px;
+}
+
+.logo2 i {
     margin-right: 5px;
 }
 
@@ -90,6 +105,14 @@ nav li {
     border: 1px solid grey;
     border-radius: 20px;
     cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 /* HERO SECTION */
@@ -136,9 +159,45 @@ nav li {
     margin-bottom: 25px;
 }
 
-/* SECTIION SERVIZI */
+@media (min-width: 768px) {
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        overflow: auto;
+        flex-direction: row;
+        gap: 25px;
+        margin-bottom: 45px;
+    }
 
-.card i {
+    .card {
+        width: 45%;
+        margin-bottom: 0;
+    }
+}
+
+/* SECTIION SERVIZI */
+.serviceCards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.serviceCard {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    vertical-align: top;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.serviceCard i {
     font-size: 35px;
     color: hsl(150, 60%, 30%);
 }
@@ -153,14 +212,51 @@ nav li {
     padding: 10px;
 }
 
+@media (min-width: 768px) {
+    .serviceCards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        overflow: auto;
+        flex-direction: row;
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+    .serviceCard {
+        width: 45.8%;
+        margin: 0;
+    }
+
+    .serviceCard:nth-child(3) {
+        width: 95%;
+    }
+}
+
 /* SECTION TEAM */
+.sectionTeam {
+    background-color: #f4fcf9;
+}
+
 .teamCards {
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-color: #f4fcf9;
     padding: 24px;
+}
+
+.teamCard {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    vertical-align: top;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 25px;
 }
 
 .iconWork {
@@ -186,6 +282,30 @@ nav li {
     font-weight: bold;
 }
 
+@media (min-width: 768px) {
+    .teamCards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        overflow: auto;
+        flex-direction: row;
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+    .teamCard {
+        width: 45.8%;
+        margin: 0;
+    }
+
+    .teamCard:nth-child(3) {
+        width: 95%;
+    }
+}
+
 /* FOOTER */
 footer {
     color: rgb(150, 149, 149);
@@ -196,6 +316,8 @@ footer {
     flex-direction: column;
     padding: 12px;
 }
+
+
 
 .iconsFt {
     display: flex;
@@ -213,4 +335,32 @@ footer {
     margin-right: 12px;
     color: white;
     background-color: rgb(48, 48, 48);
+}
+
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logo2 {
+        justify-content: start;
+    }
+
+    .logoFt,
+    .copyFt {
+        flex: 1;
+    }
+
+    .logoFt p {
+        margin: 0;
+    }
+
+    .copyFt {
+        text-align: center;
+    }
+
+    .logoFt {
+        text-align: left;
+    }
 }

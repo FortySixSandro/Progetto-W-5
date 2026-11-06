@@ -12,24 +12,24 @@
 <body>
 
     <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-seedling"></i>
+                <p>Bloom</p>
+            </div>
 
-        <div class="logo">
-            <i class="fa-solid fa-seedling"></i>
-            <p>Bloom</p>
-        </div>
+            <nav>
 
-        <nav>
+                <ul>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#lavori">Lavori</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="">Contatti</a></li>
+                </ul>
+                <a class="buttonTheme"><i class="fa-solid fa-moon"></i></a>
 
-            <ul>
-                <li><a href="">Servizi</a></li>
-                <li><a href="">Lavori</a></li>
-                <li><a href="">Team</a></li>
-                <li><a href="">Contatti</a></li>
-            </ul>
-            <a class="buttonTheme"><i class="fa-solid fa-moon"></i></a>
-
-        </nav>
-
+            </nav>
+        </header>
         <div class="hero">
             <div class="heroText">
                 <h1>Trasformiamo idee in design</h1>
@@ -42,7 +42,7 @@
         </div>
 
 
-        <div class="sectionLavori">
+        <div id="lavori" class="sectionLavori">
             <h2>I nostri lavori</h2>
 
             <div class="cards">
@@ -74,23 +74,23 @@
             </div>
         </div>
 
-        <div class="sectionServizi">
+        <div id="servizi" class="sectionServizi">
             <h2>I nostri servizi</h2>
 
-            <div class="cards">
-                <div class="card">
+            <div class="serviceCards">
+                <div class="serviceCard">
                     <i class="fa-solid fa-pen-nib"></i>
                     <h3>identità visiva</h3>
                     <p>Logo, palette, tipografia e linee guida per un brand coerente, riconoscibile e duraturo.</p>
                 </div>
 
-                <div class="card">
+                <div class="serviceCard">
                     <i class="fa-solid fa-desktop"></i>
                     <h3>Web design</h3>
                     <p>Siti vetrina e landing page responsive, accessibili e ottimizzate per dispositivi mobili.</p>
                 </div>
 
-                <div class="card">
+                <div class="serviceCard">
                     <i class="fa-solid fa-film"></i>
                     <h3>Motion graphic</h3>
                     <p>Animazioni e brevi video per raccontare il prodotto, i social e le campagne pubblicitarie.</p>
@@ -98,10 +98,9 @@
             </div>
         </div>
 
-        <div class="sectionTeam">
-
+        <div id="team" class="sectionTeam">
+            <h2>Il nostro team</h2>
             <div class="teamCards">
-                <h2>Il nostro team</h2>
                 <div class="card">
                     <div class="iconWork">
                         <p>GR</p>
@@ -111,7 +110,7 @@
                         <p>Cura l'identità visiva dei progetti, dal concept alla consegna finale.</p>
                 </div>
 
-                <div class="card">
+                <div class="teamCard">
                     <div class="iconWork">
                         <p>MB</p>
                     </div>
@@ -120,7 +119,7 @@
                         <p>Progetta interfacce responsive e accessibili, con un occhio al codice.</p>
                 </div>
 
-                <div class="card">
+                <div class="teamCard">
                     <div class="iconWork">
                         <p>SV</p>
                     </div>
@@ -134,13 +133,11 @@
     </div>
 
     <footer>
-
-        <div class="logo2">
-            <i class="fa-solid fa-seedling"></i>
-            <p>Bloom</p>
+        <div class="logoFt">
+            <span class="logo2"><i class="fa-solid fa-seedling"></i>Bloom</span>
+            <p>Studio di design fondato nel 2026.</p>
         </div>
 
-        <p>Studio di design fondato nel 2026.</p>
 
         <div class="iconsFt">
             <a href="javascript:void(0)"><i class="fa-brands fa-instagram"></i></a>
@@ -148,7 +145,9 @@
             <a href="javascript:void(0)"><i class="fa-brands fa-behance"></i></i></a>
         </div>
 
-        <p>&copy; 2026 Bloom</p>
+        <div class="copyFt">
+            <p>&copy; 2026 Bloom</p>
+        </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
