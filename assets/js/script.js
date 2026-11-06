@@ -54,3 +54,20 @@ const scrollGreen = document.querySelector('header');
 window.addEventListener('scroll', () => {
     scrollGreen.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+document.querySelectorAll('.cards, .serviceCards, .teamCards').forEach((grid) => {
+    [...grid.children].forEach((card, i) => {
+        card.classList.add('reveal');
+        card.style.setProperty('--i', i % 2);
+    });
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach((card) => revealObserver.observe(card));

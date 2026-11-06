@@ -384,6 +384,38 @@ nav li:hover {
 
 }
 
+/* ANIMAZIONE FADE UP */
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.reveal:not(.is-visible) {
+    opacity: 0;
+}
+
+.reveal.is-visible {
+    animation: rise 0.7s ease backwards;
+    animation-delay: calc(var(--i, 0) * 120ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal:not(.is-visible) {
+        opacity: 1;
+    }
+
+    .reveal.is-visible {
+        animation: none;
+    }
+}
+
 /* MEDIA QUERY */
 @media (min-width: 768px) {
     html {
