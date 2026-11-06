@@ -7,37 +7,46 @@
 
 /* PALETTE COLORI */
 :root {
+    --verde: hsl(150, 60%, 30%);
+    --verde-chiaro: hsl(150, 66%, 58%);
+    --verde-trasp: hsla(150, 60%, 30%, 0.2);
+    --bianco: #fff;
+
     --testo: #1a1a1a;
     --sfondo: #fafafa;
-    --verde: hsl(150, 60%, 30%);
-    --titoli: hsl(150, 60%, 30%);
-    --bordo: #eee;
-    --card: #fff;
     --sfondo-team: #f4fcf9;
+    --card: var(--bianco);
+    --titoli: var(--verde);
+    --bordo: #eee;
+    --bordo-btn: rgb(201, 201, 201);
     --input-bg: rgb(241, 241, 241);
-    --hero-btn-bg: #fafafa;
-    --hero-btn-testo: hsl(150, 60%, 30%);
+    --bg-li: hsl(150, 60%, 95%);
+    --ombra: rgba(0, 0, 0, 0.08);
+
     --footer-bg: rgb(31, 31, 31);
     --footer-testo: rgb(150, 149, 149);
-    --footer-icona: white;
+    --footer-icona: var(--bianco);
     --footer-icona-bg: rgb(48, 48, 48);
-    --logo-ft: hsl(150, 66%, 58%);
-    --bg-li: hsl(150, 60%, 95%);
+    --logo-ft: var(--verde-chiaro);
 }
 
 :root.dark {
     --testo: #f2f2f2;
     --sfondo: #121212;
-    --titoli: hsl(150, 66%, 58%);
-    --bordo: #333;
-    --card: #1f1f1f;
     --sfondo-team: #181818;
+    --card: #1f1f1f;
+    --titoli: var(--verde-chiaro);
+    --bordo: #333;
+    --bordo-btn: #555;
     --input-bg: #2a2a2a;
+    --bg-li: hsla(150, 60%, 30%, 0.25);
+    --ombra: rgba(0, 0, 0, 0.4);
+
     --footer-bg: #fafafa;
     --footer-testo: #6b6b6b;
     --footer-icona: #1a1a1a;
     --footer-icona-bg: #e8e8e8;
-    --logo-ft: hsl(150, 60%, 30%);
+    --logo-ft: var(--verde);
 }
 
 /* HTML, BODY & HEADER */
@@ -129,24 +138,24 @@ nav li {
 .buttonTheme {
     padding: 4px 10px;
     color: var(--testo);
-    border: 1px solid rgb(201, 201, 201);
+    border: 1px solid var(--bordo-btn);
     border-radius: 20px;
     cursor: pointer;
 }
 
 header.scrolled {
     background: var(--verde);
-    color: white;
+    color: var(--bianco);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 header.scrolled .logo,
 header.scrolled .buttonTheme {
-    color: white;
+    color: var(--bianco);
 }
 
 header.scrolled .buttonTheme {
-    border-color: white;
+    border-color: var(--bianco);
 }
 
 /* HERO SECTION */
@@ -157,15 +166,15 @@ header.scrolled .buttonTheme {
     flex-direction: column;
     text-align: center;
     background-color: var(--verde);
-    color: white;
+    color: var(--bianco);
     padding: 25px;
     height: 70vh;
 }
 
 .heroButton {
     width: 35%;
-    color: var(--hero-btn-testo);
-    background-color: var(--hero-btn-bg);
+    color: var(--verde);
+    background-color: var(--bianco);
     font-weight: bold;
     border-radius: 22px;
 }
@@ -199,12 +208,11 @@ header.scrolled .buttonTheme {
 .teamCard {
     background: var(--card);
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    vertical-align: top;
+    box-shadow: 0 1px 4px var(--ombra);
     width: 90%;
     padding: 10px;
     margin-bottom: 25px;
-    transition: all 250ms cubic-bezier(.215, .61, .355, 1);
+    transition: transform 250ms cubic-bezier(.215, .61, .355, 1), box-shadow 250ms cubic-bezier(.215, .61, .355, 1);
 }
 
 .serviceCard i {
@@ -234,8 +242,8 @@ header.scrolled .buttonTheme {
     width: 75px;
     height: 75px;
     background-color: var(--verde);
-    color: white;
-    box-shadow: 0 0 0 4px hsla(150, 60%, 30%, 0.2);
+    color: var(--bianco);
+    box-shadow: 0 0 0 4px var(--verde-trasp);
 }
 
 .iconWork p {
@@ -262,7 +270,7 @@ header.scrolled .buttonTheme {
 }
 
 .buttonUp i {
-    color: white;
+    color: var(--bianco);
     font-size: 22px;
 }
 
@@ -303,19 +311,19 @@ form label {
 }
 
 input,
-textarea {
-    background-color: var(--input-bg);
-    color: var(--testo);
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
-    width: 100%;
-    border: 1px solid var(--bordo);
-}
-
+textarea,
 select {
     background-color: var(--input-bg);
     color: var(--testo);
     border: 1px solid var(--bordo);
+}
+
+input,
+textarea {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    caret-color: var(--verde);
 }
 
 input[type="checkbox"] {
@@ -346,16 +354,12 @@ textarea:focus {
     animation: slide var(--duration, 30s) linear infinite;
 }
 
-.carousel:hover .carouselTrack {
-    animation-play-state: paused;
-}
-
 .reviewCard {
     flex: 0 0 260px;
     margin-right: 25px;
     background: var(--card);
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px var(--ombra);
     padding: 20px;
     text-align: center;
 }
@@ -368,25 +372,9 @@ textarea:focus {
     margin-bottom: 0;
 }
 
-.reviewAuthor strong {
-    color: var(--testo);
-}
-
 @keyframes slide {
     to {
         transform: translateX(var(--shift, -50%));
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .carousel {
-        overflow-x: auto;
-        -webkit-mask-image: none;
-        mask-image: none;
-    }
-
-    .carouselTrack {
-        animation: none;
     }
 }
 
@@ -416,33 +404,44 @@ footer {
     border-radius: 50%;
     color: var(--footer-icona);
     background-color: var(--footer-icona-bg);
-    transition: all 150ms cubic-bezier(.215, .61, .355, 1);
+    transition: background-color 150ms cubic-bezier(.215, .61, .355, 1), transform 150ms cubic-bezier(.215, .61, .355, 1);
 }
 
 /* EFFETTI HOVER */
-.serviceCard:hover,
-.teamCard:hover,
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 10px 4px 25px gray;
-}
+@media (hover: hover) {
+    .serviceCard:hover,
+    .teamCard:hover,
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 10px 4px 25px gray;
+    }
 
-.iconsFt i:hover {
-    background-color: var(--verde);
-    color: var(--footer-bg);
-    transform: translateY(-2px);
-}
+    .iconsFt i:hover {
+        color: var(--bianco);
+        background-color: var(--verde);
+        transform: translateY(-2px);
+    }
 
-nav li:hover {
-    color: var(--verde);
-    background-color: var(--bg-li);
-    border-radius: 8px;
-}
+    nav li:hover {
+        color: var(--titoli);
+        background-color: var(--bg-li);
+        border-radius: 8px;
+    }
 
-.buttonTheme:hover {
-    color: var(--verde);
-    background-color: var(--bg-li);
+    .buttonTheme:hover {
+        color: var(--testo);
+        background-color: var(--bg-li);
+    }
 
+    header.scrolled nav li:hover,
+    header.scrolled .buttonTheme:hover {
+        color: var(--bianco);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .carousel:hover .carouselTrack {
+        animation-play-state: paused;
+    }
 }
 
 /* ANIMAZIONE FADE UP */
@@ -465,16 +464,6 @@ nav li:hover {
 .reveal.is-visible {
     animation: rise 0.7s ease backwards;
     animation-delay: calc(var(--i, 0) * 120ms);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .reveal:not(.is-visible) {
-        opacity: 1;
-    }
-
-    .reveal.is-visible {
-        animation: none;
-    }
 }
 
 /* MEDIA QUERY */
@@ -517,16 +506,16 @@ nav li:hover {
         width: 95%;
     }
 
+    .reviewCard {
+        flex-basis: 300px;
+    }
+
     footer {
         flex-direction: row;
     }
 
     .logo2 {
         justify-content: start;
-    }
-
-    .reviewCard {
-        flex-basis: 300px;
     }
 
     .logoFt,
@@ -544,7 +533,6 @@ nav li:hover {
 }
 
 @media (min-width: 992px) {
-
     .cards,
     .serviceCards,
     .teamCards {
@@ -557,5 +545,29 @@ nav li:hover {
     .serviceCard:nth-child(3),
     .teamCard:nth-child(3) {
         width: calc((100% - 50px) / 3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal:not(.is-visible) {
+        opacity: 1;
+    }
+
+    .reveal.is-visible {
+        animation: none;
+    }
+
+    .carousel {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .carouselTrack {
+        animation: none;
     }
 }
