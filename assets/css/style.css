@@ -28,12 +28,13 @@ html {
     scroll-behavior: smooth;
 }
 
-header{
+header {
     position: sticky;
     top: 0;
     z-index: 999;
     background: var(--sfondo);
 }
+
 /* PALETTE COLORI */
 :root {
     --testo: #1a1a1a;
@@ -304,6 +305,33 @@ nav li {
     .teamCard:nth-child(3) {
         width: 95%;
     }
+}
+
+/* BUTTON TORNA SU */
+.buttonUp {
+    position: sticky;
+    padding: 30px;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    border-radius: 20%;
+    background-color: hsl(150, 60%, 30%);
+}
+
+.buttonUp a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.buttonUp i {
+    color: white;
+    font-size: 22px;
 }
 
 /* FOOTER */
