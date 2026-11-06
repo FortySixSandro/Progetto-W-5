@@ -25,7 +25,7 @@
                     <li><a href="#servizi">Servizi</a></li>
                     <li><a href="#lavori">Lavori</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="#footer">Contatti</a></li>
+                    <li><a id="openModal" type="submit" href="#footer">Contatti</a></li>
                 </ul>
                 <a class="buttonTheme"><i class="fa-solid fa-moon"></i></a>
 
@@ -133,6 +133,71 @@
 
         <div class="buttonUp">
             <a href="#"><i class="fa-solid fa-arrow-up-long"></i></a>
+        </div>
+
+        <div id="overlay" class="overlay">
+            <div class="modal">
+                <button id="closeModal" type="button">X</button>
+                <form action="grazie.html">
+                    <label for="nome">Nome</label>
+                    <br>
+                    <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+
+                    <br>
+                    <br>
+
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" id="email" name="email" required placeholder="Inserisci la tua email">
+
+                    <br>
+                    <br>
+
+                    <label for="motivoDelContatto">Motivo del contatto</label>
+                    <br>
+
+                    <select required name="motivoDelContatto" id="motivoDelContatto">
+                        <option value=""></option>
+                        <option value="lavoro">Proposta di lavoro</option>
+                        <option value="pre">Preventivo</option>
+                        <option value="info">Informazioni</option>
+                    </select>
+
+                    <br>
+                    <br>
+
+                    <label for="dataRisposta">Data preferita per la risposta</label>
+                    <br>
+                    <input type="date" id="dataRisposta" name="dataRisposta">
+
+                    <br>
+                    <br>
+
+                    <label for="messaggio">Messaggio</label>
+                    <br>
+                    <textarea placeholder="Scrivi qui il tuo messaggio..." name="messaggio" id="messaggio"
+                        rows="5"></textarea>
+
+                    <br>
+                    <br>
+
+                    <input required type="checkbox" name="termini"><span class="titoloBlu bold">Accetto di essere
+                        ricontattato all'indirizzo indicato</span>
+                    <br>
+                    <br>
+
+                    <button type="submit">Invia</button>
+
+                </form>
+
+                <div class="testoLink">
+                    <p>Sono presente su queste piattaforme professionali, dove puoi seguire i miei progetti.</p>
+                    <p>Profilo GitHub: <a href="https://github.com/FortySixSandro"
+                            target="_blank">github.com/FortySixSandro</a>
+                    </p>
+                    <p>Profilo LinkedIn: <a href="javascript:void(0);">linkedin.com/in/sandro</a></p>
+                </div>
+            </div>
         </div>
     </div>
 
