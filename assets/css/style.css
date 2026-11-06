@@ -1,8 +1,46 @@
-/* RESET */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+:root {
+    --testo: #1a1a1a;
+    --sfondo: #fafafa;
+    --verde: hsl(150, 60%, 30%);
+    --titoli: hsl(150, 60%, 30%);
+    --bordo: #eee;
+    --card: #fff;
+    --sfondo-team: #f4fcf9;
+    --input-bg: rgb(241, 241, 241);
+    --hero-btn-bg: #fafafa;
+    --hero-btn-testo: hsl(150, 60%, 30%);
+    --footer-bg: rgb(31, 31, 31);
+    --footer-testo: rgb(150, 149, 149);
+    --footer-icona: white;
+    --footer-icona-bg: rgb(48, 48, 48);
+    --logo-ft: hsl(150, 66%, 58%);
+}
+
+:root.dark {
+    --testo: #f2f2f2;
+    --sfondo: #121212;
+    --titoli: hsl(150, 66%, 58%);
+    --bordo: #333;
+    --card: #1f1f1f;
+    --sfondo-team: #181818;
+    --input-bg: #2a2a2a;
+    --hero-btn-bg: #121212;
+    --hero-btn-testo: hsl(150, 66%, 58%);
+    --footer-bg: #fafafa;
+    --footer-testo: #6b6b6b;
+    --footer-icona: #1a1a1a;
+    --footer-icona-bg: #e8e8e8;
+    --logo-ft: hsl(150, 60%, 30%);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,6 +50,10 @@ body {
     line-height: 1.6;
     color: var(--testo);
     background-color: var(--sfondo);
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 img {
@@ -24,10 +66,6 @@ a {
     text-decoration: none;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 header {
     position: sticky;
     top: 0;
@@ -35,58 +73,12 @@ header {
     background: var(--sfondo);
 }
 
-/* PALETTE COLORI */
-:root {
-    --testo: #1a1a1a;
-    --sfondo: #fafafa;
-    --verde: hsl(150, 60%, 30%);
-    --bordo: #eee;
-}
-
-/* :root.dark{} */
-
-
-
-/* NAVBAR */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 8px;
     margin-right: 6px;
-}
-
-.logo {
-    color: hsl(150, 60%, 30%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 6px;
-}
-
-.logo2 {
-    color: hsl(150, 66%, 58%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 4px;
-}
-
-.logo p {
-    margin: 0;
-    padding: 5px;
-}
-
-.logo i {
-    margin-right: 5px;
-}
-
-.logo2 i {
-    margin-right: 5px;
 }
 
 nav ul {
@@ -98,6 +90,36 @@ nav li {
     display: inline-block;
     padding: 10px;
     margin-right: 6px;
+    cursor: pointer;
+}
+
+.logo,
+.logo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo {
+    color: var(--verde);
+    padding: 6px;
+}
+
+.logo2 {
+    color: var(--logo-ft);
+    margin-bottom: 4px;
+}
+
+.logo p {
+    margin: 0;
+    padding: 5px;
+}
+
+.logo i,
+.logo2 i {
+    margin-right: 5px;
 }
 
 .buttonTheme {
@@ -108,15 +130,6 @@ nav li {
     cursor: pointer;
 }
 
-@media (min-width: 768px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-/* HERO SECTION */
 .hero {
     display: flex;
     justify-content: center;
@@ -131,8 +144,8 @@ nav li {
 
 .heroButton {
     width: 35%;
-    color: hsl(150, 60%, 30%);
-    background-color: var(--sfondo);
+    color: var(--hero-btn-testo);
+    background-color: var(--hero-btn-bg);
     font-weight: bold;
     border-radius: 22px;
 }
@@ -142,54 +155,27 @@ nav li {
     padding: 8px;
 }
 
-/* SECTION LAVORI */
-.cards {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.sectionLavori h2,
+.sectionServizi h2,
+.sectionTeam h2 {
     text-align: center;
-}
-
-.card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    vertical-align: top;
-    width: 90%;
+    color: var(--titoli);
     padding: 10px;
-    margin-bottom: 25px;
 }
 
-@media (min-width: 768px) {
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        align-content: flex-start;
-        width: 100%;
-        overflow: auto;
-        flex-direction: row;
-        gap: 25px;
-        margin-bottom: 45px;
-    }
-
-    .card {
-        width: 45%;
-        margin-bottom: 0;
-    }
-}
-
-/* SECTIION SERVIZI */
-.serviceCards {
+.cards,
+.serviceCards,
+.teamCards {
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
 }
 
-.serviceCard {
-    background: #fff;
+.card,
+.serviceCard,
+.teamCard {
+    background: var(--card);
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     vertical-align: top;
@@ -200,64 +186,19 @@ nav li {
 
 .serviceCard i {
     font-size: 35px;
-    color: hsl(150, 60%, 30%);
+    color: var(--titoli);
 }
 
-
-/* SECTION GENERALI */
-.sectionLavori h2,
-.sectionServizi h2,
-.sectionTeam h2 {
-    text-align: center;
-    color: hsl(150, 60%, 30%);
-    padding: 10px;
-}
-
-@media (min-width: 768px) {
-    .serviceCards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        align-content: flex-start;
-        width: 100%;
-        overflow: auto;
-        flex-direction: row;
-        gap: 25px;
-        margin-bottom: 45px;
-    }
-
-    .serviceCard {
-        width: 45.8%;
-        margin: 0;
-    }
-
-    .serviceCard:nth-child(3) {
-        width: 95%;
-    }
-}
-
-/* SECTION TEAM */
 .sectionTeam {
-    background-color: #f4fcf9;
+    background-color: var(--sfondo-team);
 }
 
 .teamCards {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
     padding: 24px;
 }
 
-.teamCard {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    vertical-align: top;
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 25px;
+.teamCard h5 {
+    color: var(--titoli);
 }
 
 .iconWork {
@@ -265,17 +206,13 @@ nav li {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    border-radius: 50px;
+    border-radius: 50%;
     margin: 0 auto;
     width: 75px;
     height: 75px;
-    background-color: hsl(150, 60%, 30%);
+    background-color: var(--verde);
     color: white;
     box-shadow: 0 0 0 4px hsla(150, 60%, 30%, 0.2);
-}
-
-.card h5 {
-    color: hsl(150, 60%, 30%);
 }
 
 .iconWork p {
@@ -283,83 +220,6 @@ nav li {
     font-weight: bold;
 }
 
-@media (min-width: 768px) {
-    .teamCards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        align-content: flex-start;
-        width: 100%;
-        overflow: auto;
-        flex-direction: row;
-        gap: 25px;
-        margin-bottom: 45px;
-    }
-
-    .teamCard {
-        width: 45.8%;
-        margin: 0;
-    }
-
-    .teamCard:nth-child(3) {
-        width: 95%;
-    }
-}
-
-/* FORM, OVERLAY & MODAL */
-.overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-}
-
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-}
-
-#closeModal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 14px 24px;
-}
-
-form label {
-    color: hsl(150, 60%, 30%);
-    font-weight: bold;
-}
-
-input,
-textarea {
-    background-color: rgb(241, 241, 241);
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
-    width: 100%;
-    border: 1px solid var(--bordo);
-}
-
-input[type="checkbox"] {
-    accent-color: hsl(150, 60%, 30%);
-    width: auto;
-}
-
-input:focus,
-textarea:focus {
-    outline: 2px solid hsl(150, 60%, 30%);
-}
-
-/* BUTTON TORNA SU */
 .buttonUp {
     position: sticky;
     padding: 30px;
@@ -371,7 +231,7 @@ textarea:focus {
     margin-right: 50px;
     margin-bottom: 20px;
     border-radius: 20%;
-    background-color: hsl(150, 60%, 30%);
+    background-color: var(--verde);
 }
 
 .buttonUp a {
@@ -386,10 +246,70 @@ textarea:focus {
     font-size: 22px;
 }
 
-/* FOOTER */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card);
+    color: var(--testo);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 14px 24px;
+}
+
+form label {
+    color: var(--titoli);
+    font-weight: bold;
+}
+
+input,
+textarea {
+    background-color: var(--input-bg);
+    color: var(--testo);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid var(--bordo);
+}
+
+select {
+    background-color: var(--input-bg);
+    color: var(--testo);
+    border: 1px solid var(--bordo);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--verde);
+    width: auto;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--verde);
+}
+
 footer {
-    color: rgb(150, 149, 149);
-    background-color: rgb(31, 31, 31);
+    color: var(--footer-testo);
+    background-color: var(--footer-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -397,30 +317,60 @@ footer {
     padding: 12px;
 }
 
-
-
 .iconsFt {
     display: flex;
-    justify-content: space-around;
+    gap: 12px;
     font-size: 20px;
 }
 
 .iconsFt i {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 40px;
     height: 40px;
-    border-radius: 50px;
-    margin-right: 12px;
-    color: white;
-    background-color: rgb(48, 48, 48);
+    border-radius: 50%;
+    color: var(--footer-icona);
+    background-color: var(--footer-icona-bg);
 }
 
 @media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cards,
+    .serviceCards,
+    .teamCards {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: row;
+        width: 100%;
+        gap: 25px;
+        margin-bottom: 45px;
+    }
+
+    .card {
+        width: 45%;
+        margin-bottom: 0;
+    }
+
+    .serviceCard,
+    .teamCard {
+        width: 45.8%;
+        margin: 0;
+    }
+
+    .serviceCard:nth-child(3),
+    .teamCard:nth-child(3) {
+        width: 95%;
+    }
+
     footer {
         flex-direction: row;
-        align-items: center;
     }
 
     .logo2 {
@@ -438,9 +388,5 @@ footer {
 
     .copyFt {
         text-align: center;
-    }
-
-    .logoFt {
-        text-align: left;
     }
 }
