@@ -54,6 +54,16 @@ nav {
     padding: 6px;
 }
 
+.logo2 {
+    color: hsl(150, 66%, 58%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px;
+}
+
 .logo p {
     margin: 0;
     padding: 5px;
@@ -174,4 +184,33 @@ nav li {
 .iconWork p {
     font-size: 22px;
     font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    color: rgb(150, 149, 149);
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.iconsFt {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.iconsFt i {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-right: 12px;
+    color: white;
+    background-color: rgb(48, 48, 48);
 }
