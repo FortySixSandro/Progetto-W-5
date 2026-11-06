@@ -128,7 +128,7 @@ nav li {
 
 /* SECTIION SERVIZI */
 
-.card i{
+.card i {
     font-size: 35px;
     color: hsl(150, 60%, 30%);
 }
@@ -136,8 +136,42 @@ nav li {
 
 /* SECTION GENERALI */
 .sectionLavori h2,
-.sectionServizi h2 {
+.sectionServizi h2,
+.sectionTeam h2 {
     text-align: center;
     color: hsl(150, 60%, 30%);
     padding: 10px;
+}
+
+/* SECTION TEAM */
+.teamCards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f4fcf9;
+    padding: 24px;
+}
+
+.iconWork {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50px;
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    background-color: hsl(150, 60%, 30%);
+    color: white;
+    box-shadow: 0 0 0 4px hsla(150, 60%, 30%, 0.2);
+}
+
+.card h5 {
+    color: hsl(150, 60%, 30%);
+}
+
+.iconWork p {
+    font-size: 22px;
+    font-weight: bold;
 }
