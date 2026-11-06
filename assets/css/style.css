@@ -11,6 +11,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--testo);
+    background-color: var(--sfondo);
 }
 
 img {
@@ -37,11 +38,10 @@ a {
 
 /* NAVBAR */
 nav {
-    border: 1px solid red;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 8px;
 }
 
 .logo {
@@ -49,10 +49,23 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px;
+}
+
+.logo p {
+    margin: 0;
+    padding: 5px;
 }
 
 .logo i {
     margin-right: 5px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
@@ -62,9 +75,69 @@ nav li {
 }
 
 .buttonTheme {
-    padding: 8px 14px;
+    padding: 4px 10px;
     color: var(--testo);
     border: 1px solid grey;
     border-radius: 20px;
     cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--verde);
+    color: white;
+    padding: 25px;
+    height: 70vh;
+}
+
+.heroButton {
+    width: 35%;
+    color: hsl(150, 60%, 30%);
+    background-color: var(--sfondo);
+    font-weight: bold;
+    border-radius: 22px;
+}
+
+.heroButton p {
+    margin: 0;
+    padding: 8px;
+}
+
+/* SECTION LAVORI */
+.cards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    vertical-align: top;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+/* SECTIION SERVIZI */
+
+.card i{
+    font-size: 35px;
+    color: hsl(150, 60%, 30%);
+}
+
+
+/* SECTION GENERALI */
+.sectionLavori h2,
+.sectionServizi h2 {
+    text-align: center;
+    color: hsl(150, 60%, 30%);
+    padding: 10px;
 }
